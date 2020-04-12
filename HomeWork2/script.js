@@ -32,6 +32,7 @@ for(i = 0; i < 2; i++ ){
         }
 };
 
+
 appData.moneyPerDay = appData.budget / 30;
 
 
