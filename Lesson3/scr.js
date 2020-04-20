@@ -72,23 +72,27 @@ let appData = {
     },
 
     chooseIncome: function(){
-        // for (let i = 0; i < 2; i++){
+        
 
-        let items = typeof(prompt("Что принесет дополнительный доход?(Перечислите через запятую)", "") === 'string');
+        let items = prompt("Что принесет дополнительный доход?(Перечислите через запятую)", "");
 
-        // if (typeof(items) === 'string'){
 
-            appData.income = items.split(', ');
-        // }else{
-        //     i = i - 1;
-        // }
-    // }
-
-       
+        appData.income = items.split(', ');
         appData.income.push(prompt("Может что-то еще?"));
         appData.income.sort;
     }
 };
+
+
+// function start() {
+//     money = prompt("Ваш бюджет на месяц?", "");
+//     time = prompt('Введите дату в формате YY-MM-DD', '');
+
+//     while (isNaN(money) || money == "" || money == null) {
+//         money = prompt("Ваш бюджет на месяц?", "");
+//     }
+// }
+// start();
 
 // let a1 = prompt("Введите обязательную статью расходов в этом месяце", ''),
 //     a2 = prompt("Во сколько обойдется?", ''),
