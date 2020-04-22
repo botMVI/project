@@ -50,7 +50,7 @@ startBtn.addEventListener('click', function(){
 });
 
 expensesBtn.addEventListener('click', function() {
-    
+
     let sum = 0;
 
     for (let i = 0; i < expensesItem.length; i++) {
@@ -98,9 +98,6 @@ countBtn.addEventListener('click', function() {
 		dayBudgetValue.textContent = 'Доход не рассчитан';
 	}
 });
-
-// Реализовать функционал: при расчете дневного бюджета учитывать сумму обязательных трат 
-// (т. e. от бюджета на месяц отнимаем общую сумму всех обяз. трат и ее делим на 30 дней)
 
 incomeItem.addEventListener('input', function() {
 	let items = incomeItem.value;

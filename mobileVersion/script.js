@@ -31,4 +31,13 @@ window.addEventListener('DOMContentLoaded', function() {
 //         e.preventDefault();
 //         console.log('Red box: touchend');
 //     });
+
+    // new RegExp('pattern', 'flags');
+    // /pattern/
+
+    let ans = prompt('Write your name');
+
+    let reg = /n/;
+
+    console.log(ans.search(reg));
 });
