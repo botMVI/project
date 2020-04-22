@@ -26,6 +26,9 @@ let startBtn = document.getElementById("start"),
 
 let money, time;
 
+expensesBtn.disabled = true;
+optionalExpensesBtn.disabled = true;
+countBtn.disabled = true;
 
 startBtn.addEventListener('click', function(){
     time = prompt ("Введите дату в формате YYYY-MM-DD", "");
@@ -40,9 +43,14 @@ startBtn.addEventListener('click', function(){
     yearValue.value = new Date(Date.parse(time)).getFullYear();
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
     dayValue.value = new Date(Date.parse(time)).getDate();
+
+    expensesBtn.disabled = false;
+    optionalExpensesBtn.disabled = false;
+    countBtn.disabled = false;
 });
 
 expensesBtn.addEventListener('click', function() {
+    
     let sum = 0;
 
     for (let i = 0; i < expensesItem.length; i++) {
@@ -64,19 +72,17 @@ expensesBtn.addEventListener('click', function() {
 });
 
 optionalExpensesBtn.addEventListener('click', function() {
-    for (let i = 0; i < optionalExpensesItem.lenght; i++) {
+    for (let i = 0; i < optionalExpensesItem.length; i++) {
         let opt = optionalExpensesItem[i].value;
         appData.optionalExpenses[i] = opt;
-		optionalExpensesValue.textContent += appData.optionalExpenses[i] + ' ';
-		
-        }
-
+        optionalExpensesValue.textContent += appData.optionalExpenses[i] + ' '; 
+    }
 });
 
 countBtn.addEventListener('click', function() { 
 
 	if (appData.budget != undefined) {
-		appData.moneyPerDay = (appData.budget / 30).toFixed();
+		appData.moneyPerDay = ((appData.budget - +expensesValue.textContent ) / 30).toFixed();
 		dayBudgetValue.textContent = appData.moneyPerDay;
 
 		if (appData.moneyPerDay < 100) {
@@ -92,6 +98,9 @@ countBtn.addEventListener('click', function() {
 		dayBudgetValue.textContent = 'Доход не рассчитан';
 	}
 });
+
+// Реализовать функционал: при расчете дневного бюджета учитывать сумму обязательных трат 
+// (т. e. от бюджета на месяц отнимаем общую сумму всех обяз. трат и ее делим на 30 дней)
 
 incomeItem.addEventListener('input', function() {
 	let items = incomeItem.value;
