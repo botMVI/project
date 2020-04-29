@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
    //Timer
 
-   let deadLine = '2020-04-29 16:41';
+   let deadLine = '2020-04-29 21:00';
 
    function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -68,33 +68,32 @@ window.addEventListener('DOMContentLoaded', function() {
 
 			if (t.total <= 0){
 				clearInterval(timeInterval);
-					
-			} 
-	}
-	
+            }
+    
+}
    }
 
    setClock('timer', deadLine);
 });
 
 
-function startTime() {
-	var today = new Date();
-	var h = today.getHours();
-	var m = today.getMinutes();
-	var s = today.getSeconds();
-	// add a zero in front of numbers<10
-	m = checkTime(m);
-	s = checkTime(s);
-	document.getElementById("txt").innerHTML = h+ ":" + m + ":" + s;
-	t = setTimeout(function(){ startTime() }, 500);
-  }
+// function startTime() {
+// 	var today = new Date();
+// 	var h = today.getHours();
+// 	var m = today.getMinutes();
+// 	var s = today.getSeconds();
+// 	// add a zero in front of numbers<10
+// 	m = checkTime(m);
+// 	s = checkTime(s);
+// 	document.getElementById("txt").innerHTML = h+ ":" + m + ":" + s;
+// 	t = setTimeout(function(){ startTime() }, 500);
+//   }
   
-  function checkTime(i) {
-	if (i<10) {
-	  i = "0" + i;
-	}
-	return i;
-  } 
+//   function checkTime(i) {
+// 	if (i<10) {
+// 	  i = "0" + i;
+// 	}
+// 	return i;
+//   } 
 //   https://www.w3schools.com/jsref/met_win_clearinterval.asp
 // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_clock

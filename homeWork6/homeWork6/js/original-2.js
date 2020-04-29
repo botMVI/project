@@ -146,4 +146,4 @@ let appData = {
     optionalExpenses: {},
     income: [],
     savings: false
-};
+};п
