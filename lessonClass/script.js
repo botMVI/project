@@ -50,16 +50,16 @@
 
 /////////
 
-// let user = {
-//     name: 'John'
-// };
+let user = {
+    name: 'John'
+};
 
-// function sayName(surname) {
-//     console.log(this);
-//     console.log(this.name + ' ' + surname);
-// }
+function sayName(surname) {
+    // console.log(this);
+    console.log(this.name);
+}
 
-// console.log(sayName.call(user, 'Smith'));
+console.log(sayName.call(user, 'Smitth'));
 // console.log(sayName.apply(user, ['Snow']));
 
 // function count(number) {
@@ -72,16 +72,16 @@
 
 ///////
 
-let btn = document.querySelector('button');
+// let btn = document.querySelector('button');
 
-btn.addEventListener('click', function() {
-    console.log(this);
-    this.style.backgroundColor = 'red';
-    function showThis() {
-        console.log(this);
-    }
-    showThis();
-});
+// btn.addEventListener('click', function() {
+//     console.log(this);
+//     this.style.backgroundColor = 'red';
+//     function showThis() {
+//         console.log(this);
+//     }
+//     showThis();
+// });
 
 // 1) Просто вызов функции - window/undefined
 // 2) Метод обьекта - this = обьект

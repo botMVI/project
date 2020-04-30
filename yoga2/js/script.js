@@ -83,7 +83,6 @@ window.addEventListener('DOMContentLoaded', function() {
    }
 
    setClock('timer', deadLine);
-});
 
 
 // function startTime() {
@@ -106,3 +105,33 @@ window.addEventListener('DOMContentLoaded', function() {
 //   } 
 //   https://www.w3schools.com/jsref/met_win_clearinterval.asp
 // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_clock
+
+// Modal Window
+
+let more = document.querySelector('.more'),
+    overlay = document.querySelector('.overlay'),
+    close = document.querySelector('.popup-close'),
+    descriptionBtn = document.querySelector('.description-btn');
+
+more.addEventListener('click', function() {
+    overlay.style.display = 'block';
+    this.classList.add('more-splash');
+    document.body.style.overflow = 'hidden';//запрет прокрутки страницы при активной форме обратной связи
+});
+
+close.addEventListener('click', function() {
+    overlay.style.display = 'none';
+    more.classList.remove('more-splash');
+    document.body.style.overflow = '';//отмена запрета ^
+});
+
+descriptionBtn.addEventListener('click', function() {
+    overlay.style.display = 'block';
+    this.classList.add('more-splash');
+    document.body.style.overflow = 'hidden';
+});
+
+
+
+
+});
