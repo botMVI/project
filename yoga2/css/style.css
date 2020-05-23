@@ -185,7 +185,7 @@ header ul li:before {
   display: block;
   width: 0%;
   height: 3px;
-  background-color: #c78030;
+  background-color: #c78030;    /* #c78030;*/
   margin-top: 4px;
   -webkit-transition: 0.4s;
           transition: 0.4s;
